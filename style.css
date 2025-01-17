@@ -1,0 +1,28 @@
+.btnContainer{
+     display: flex;
+     gap: 20px;
+     justify-content: space-around;
+     margin-top: 40px;
+}
+button{
+     font-size: xx-large;
+     background-color: #fbfbfb;
+     border: 4px dashed #c5c5c5;
+     padding: 13px;
+}
+#result{
+     text-align: center;
+     margin: 30px;
+     font-size: x-large;
+     border: 4px dashed #c5c5c5;
+     padding: 13px;
+}
+#scores{
+     display: flex;
+     justify-content: space-around;
+
+}
+h1{
+     border: 4px dashed #c5c5c5;
+     padding: 13px;
+}
