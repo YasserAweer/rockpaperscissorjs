@@ -2,54 +2,50 @@ function getAiRPS() {
   let arr = ["rock", "paper", "scissor"];
   return arr[Math.floor(Math.random() * 3)];
 }
-let us = 0;
-let cs = 0;
-function round(ua, ca) {
-  
-  console.log(ca);
-  if (ca == "rock" && ua == "rock") {
+let userScore = 0;
+let computerScore = 0;
+function round(userAnswer, computerAnswer) {
+  console.log(computerAnswer);
+  if (computerAnswer == "rock" && userAnswer == "rock") {
     console.log("draw!");
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "rock" && ua == "paper") {
+  } else if (computerAnswer == "rock" && userAnswer == "paper") {
     console.log("You Win!");
-    us += 1;
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "rock" && ua == "scissor") {
+    userScore += 1;
+  } else if (computerAnswer == "rock" && userAnswer == "scissors") {
     console.log("You Lose!");
-    cs += 1;
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "paper" && ua == "paper") {
+    computerScore += 1;
+  } else if (computerAnswer == "paper" && userAnswer == "paper") {
     console.log("draw!");
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "paper" && ua == "rock") {
+  } else if (computerAnswer == "paper" && userAnswer == "rock") {
     console.log("You Lose!");
-    //   let ua = prompt("rock, paper, or scissor?");
-    cs += 1;
-  } else if (ca == "paper" && ua == "scissor") {
+    computerScore += 1;
+  } else if (computerAnswer == "paper" && userAnswer == "scissors") {
     console.log("You Win!");
-    us += 1;
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "scissor" && ua == "scissor") {
+    userScore += 1;
+  } else if (computerAnswer == "scissors" && userAnswer == "scissors") {
     console.log("draw!");
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "scissor" && ua == "rock") {
+  } else if (computerAnswer == "scissors" && userAnswer == "rock") {
     console.log("You Win!");
-    us += 1;
-    //   let ua = prompt("rock, paper, or scissor?");
-  } else if (ca == "scissor" && ua == "paper") {
+    userScore += 1;
+  } else if (computerAnswer == "scissors" && userAnswer == "paper") {
     console.log("You Lose!");
-    cs += 1;
-    //   let ua = prompt("rock, paper, or scissor?");
+    computerScore += 1;
   }
-  
 }
 
+// let computerAnswer = getAiRPS();
 
-let i = 0;
-while (i < 10) {
-     let uaa = prompt("rock, paper, or scissor?");
-     let caa = getAiRPS();
-     console.log(round(uaa, caa));
-     console.log("computer score is ", cs, " and your score is ", us);
-     i += 1;
-}
+const paperButton = document.getElementById("paperBtn");
+paperButton.addEventListener("click", () => {
+  round("paper", getAiRPS());
+});
+
+const rockBtn = document.getElementById("rockBtn");
+rockBtn.addEventListener("click", () => {
+  round("rock", getAiRPS());
+});
+
+const scissorsBtn = document.getElementById("scissorsBtn");
+scissorsBtn.addEventListener("click", () => {
+  round("scissors", getAiRPS());
+});
